@@ -49,6 +49,6 @@ public class FinalExample {
         account.withdraw(120);
 //        account.withdraw(50);
 //        account.topUp(-50);
-        account.withdraw(-20);
+//        account.withdraw(-20);
     }
 }
