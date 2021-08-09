@@ -1,36 +1,38 @@
 package az.pashabank.learning.session.algorithm.task2;
 
+import java.util.List;
+
 public class Result {
 
     /*
-     * Complete the 'beautifulDays' function below.
+     * Complete the 'breakingRecords' function below.
      *
-     * The function is expected to return an INTEGER.
-     * The function accepts following parameters:
-     *  1. INTEGER i
-     *  2. INTEGER j
-     *  3. INTEGER k
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts INTEGER_ARRAY scores as parameter.
      */
 
-    public static int beautifulDays(int i, int j, int k) {
+    public static List<Integer> breakingRecords(List<Integer> scores) {
         // Write your code here
 
-        int count = 0;
+        int min = scores.get(0);
+        int max = scores.get(0);
+        int maxCount = 0, minCount = 0;
 
-        for (int l = i; l <= j; l++) {
-            int reverse = 0, value = l;
-            while(value != 0) {
-                int rest = value % 10;
-                reverse = reverse * 10 + rest;
-                value = value / 10;
+        for(int i = 0; i < scores.size(); i++) {
+            if(scores.get(i) > max) {
+                max = scores.get(i);
+                maxCount++;
             }
-
-            if(Math.abs(l - reverse) % k == 0) {
-                count++;
+            if(scores.get(i) < min) {
+                min = scores.get(i);
+                minCount++;
             }
         }
 
-        return count;
-    }
+        scores.clear();
+        scores.add(maxCount);
+        scores.add(minCount);
 
+        return scores;
+    }
 }
