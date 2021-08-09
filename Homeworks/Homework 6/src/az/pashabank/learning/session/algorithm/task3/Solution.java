@@ -1,4 +1,6 @@
-package az.pashabank.learning.session.algorithm.task1;
+package az.pashabank.learning.session.algorithm.task3;
+
+import az.pashabank.learning.session.algorithm.task1.Result;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -36,6 +38,7 @@ public class Solution {
 //
 //        bufferedReader.close();
 //        bufferedWriter.close();
+
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
 
@@ -50,12 +53,8 @@ public class Solution {
             scores.add(arr[i]);
         }
 
-        List<Integer> result = Result.breakingRecords(scores);
-        for(int i = 0; i < n; i++) {
-            System.out.println("result " + result);
-        }
+//        List<Integer> result = Result.breakingRecords(scores);
 
-        System.out.println("Res ");
-
+        System.out.println(Result.breakingRecords(scores));
     }
 }

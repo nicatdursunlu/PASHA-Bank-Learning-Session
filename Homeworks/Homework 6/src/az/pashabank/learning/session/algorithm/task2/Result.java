@@ -15,20 +15,22 @@ public class Result {
     public static int beautifulDays(int i, int j, int k) {
         // Write your code here
 
-        for (int l = i; l <= j; l++) {
-            int reverse = 0;
-            while(l != 0) {
-                int rest = l % 10;
-                reverse = reverse * 10 + rest;
-                l = l / 10;
+        int count = 0;
 
-                System.out.println(reverse + "");
+        for (int l = i; l <= j; l++) {
+            int reverse = 0, value = l;
+            while(value != 0) {
+                int rest = value % 10;
+                reverse = reverse * 10 + rest;
+                value = value / 10;
             }
-//            System.out.println(reverse + "");
+
+            if(Math.abs(l - reverse) % k == 0) {
+                count++;
+            }
         }
 
-//        System.out.println("reverse " + iReverse + jReverse);
-        return 5;
+        return count;
     }
 
 }

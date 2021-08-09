@@ -14,7 +14,7 @@ public class Result {
 
     public static List<Integer> breakingRecords(List<Integer> scores) {
         // Write your code here
-        Scanner scanner = new Scanner(System.in);
+
 
 //        int h = 0, a, i, l;
 //        int high = 0, low = 0;
