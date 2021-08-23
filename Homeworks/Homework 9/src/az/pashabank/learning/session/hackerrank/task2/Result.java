@@ -16,8 +16,8 @@ public class Result {
             } else if (a.get(i) < b.get(i)) {
                 n++;
             }
-            list.set(0, m);
-            list.set(1, n);
+            list.add(m);
+            list.add(n);
         }
         return list;
     }
