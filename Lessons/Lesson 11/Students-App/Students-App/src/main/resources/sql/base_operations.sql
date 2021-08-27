@@ -31,3 +31,7 @@ WHERE full_name LIKE '%oe';
 SELECT *
 FROM students
 WHERE full_name LIKE 'Nijat%';
+
+SELECT *
+FROM students
+WHERE full_name LIKE '%jat%';
