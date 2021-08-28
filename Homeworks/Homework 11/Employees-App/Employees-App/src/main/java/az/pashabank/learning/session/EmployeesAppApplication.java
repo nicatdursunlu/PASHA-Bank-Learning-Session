@@ -1,4 +1,4 @@
-package az.pashabank.learning.session.EmployeesApp;
+package az.pashabank.learning.session;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

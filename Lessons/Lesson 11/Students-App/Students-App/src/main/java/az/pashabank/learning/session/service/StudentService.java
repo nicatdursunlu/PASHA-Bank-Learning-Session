@@ -1,7 +1,6 @@
 package az.pashabank.learning.session.service;
 
 import az.pashabank.learning.session.model.StudentDto;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class StudentService {
 
     public StudentDto getStudent(Long id) {
         return students.stream()
-                .filter(student ->student.getId().equals(id))
+                .filter(student -> student.getId().equals(id))
                 .findFirst()
                 .orElse(null);
     }
