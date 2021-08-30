@@ -10,18 +10,19 @@ CREATE TABLE EMPLOYEES
 
 INSERT INTO EMPLOYEES (NAME, SURNAME, AGE)
 values ('Nijat', 'Dursunlu', 22);
+
 INSERT INTO EMPLOYEES (NAME, SURNAME, AGE)
 values ('Kanan', 'Huseynli', 21);
+
 INSERT INTO EMPLOYEES (NAME, SURNAME, AGE)
 values ('Elgun', 'Jumayev', 23);
+
 INSERT INTO EMPLOYEES (NAME, SURNAME, AGE)
 values ('John', 'Doe', 45);
+
 INSERT INTO EMPLOYEES (NAME, SURNAME, AGE)
 values ('Sara', 'Don', 50);
 
-
-SELECT *
-FROM EMPLOYEES;
 
 CREATE TABLE EMPLOYEES_CONTACT_DETAILS
 (
@@ -33,6 +34,9 @@ CREATE TABLE EMPLOYEES_CONTACT_DETAILS
     created_at timestamp default now(),
     updated_at timestamp default now()
 );
+
+ALTER TABLE EMPLOYEES_CONTACT_DETAILS
+    ADD COLUMN BIRTH_DATE DATE;
 
 INSERT INTO EMPLOYEES_CONTACT_DETAILS (PHONE, EMAIL, ADDRESS, DEPARTMENT)
 VALUES ('+994513613025', 'nicat.dursunlu@gmail.com', 'Azerbaijan, Baku, Surakhani district', 'Digital Lab');
@@ -48,6 +52,12 @@ VALUES ('+994702543612', 'elgun.jumayev@gmail.com', 'Azerbaijan, Gakh', 'Game De
 
 INSERT INTO EMPLOYEES_CONTACT_DETAILS (PHONE, EMAIL, ADDRESS, DEPARTMENT)
 VALUES ('+5245621571818', 'john.doe@gmail.com', 'United State', 'Human Resources');
+
+INSERT INTO EMPLOYEES_CONTACT_DETAILS (PHONE, EMAIL, ADDRESS, DEPARTMENT)
+VALUES ('+58495948484848', 'sara.don@gmail.com', 'United Kingdom', 'Business Analyst');
+
+SELECT *
+FROM EMPLOYEES;
 
 SELECT *
 FROM EMPLOYEES_CONTACT_DETAILS;
