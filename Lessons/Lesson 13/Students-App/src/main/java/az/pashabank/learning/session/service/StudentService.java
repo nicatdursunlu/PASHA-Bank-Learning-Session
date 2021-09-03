@@ -1,32 +1,49 @@
 package az.pashabank.learning.session.service;
 
+import az.pashabank.learning.session.dao.repository.StudentRepository;
+import az.pashabank.learning.session.mapper.StudentMapper;
 import az.pashabank.learning.session.model.StudentDto;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 public class StudentService {
 
-    private List<StudentDto> students;
+    private final StudentRepository studentRepository;
 
-    public StudentService() {
-        this.students = new ArrayList<>();
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
     }
 
     public List<StudentDto> getStudents() {
-        return students;
+        var students = studentRepository.findAll();
+
+        return StudentMapper.mapEntitiesToDtos(students);
     }
 
     public StudentDto getStudent(Long id) {
-        return students.stream()
-                .filter(student -> student.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+        var student = studentRepository
+                .findById(id)
+                .orElseThrow(() -> new RuntimeException("STUDENT_NOT_FOUND"));
+
+        return StudentMapper.mapEntityToDto(student);
     }
 
     public void createStudent(StudentDto studentDto) {
-        students.add(studentDto);
+        var entity = StudentMapper.mapDtoToEntity(studentDto);
+        studentRepository.save(entity);
+    }
+
+    @Transactional
+    public void updateStudent(long id, StudentDto studentDto) {
+        studentRepository.updateStudent(id, studentDto.getName());
+    }
+
+    @Transactional
+    public void deleteStudent(Long id) {
+        var entity = studentRepository.findById(id).orElseThrow();
+        studentRepository.delete(entity);
     }
 }

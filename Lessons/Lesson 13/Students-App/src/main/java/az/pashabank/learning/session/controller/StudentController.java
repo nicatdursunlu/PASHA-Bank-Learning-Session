@@ -2,8 +2,6 @@ package az.pashabank.learning.session.controller;
 
 import az.pashabank.learning.session.model.StudentDto;
 import az.pashabank.learning.session.service.StudentService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,20 +17,27 @@ public class StudentController {
     }
 
     @GetMapping
-    public ResponseEntity<List<StudentDto>> getStudents() {
-        return ResponseEntity.ok(studentService.getStudents());
+    public List<StudentDto> getStudents() {
+        return studentService.getStudents();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StudentDto> getStudent(@PathVariable Long id, @RequestParam String param) {
-        StudentDto student = studentService.getStudent(id);
-        return ResponseEntity.ok(student);
+    public StudentDto getStudent(@PathVariable Long id) {
+        return studentService.getStudent(id);
     }
 
     @PostMapping
-    public ResponseEntity<Void> createStudent(@RequestBody StudentDto studentDto) {
+    public void createStudent(@RequestBody StudentDto studentDto) {
         studentService.createStudent(studentDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @PutMapping("/{id}")
+    public void updateStudent(@PathVariable long id, @RequestBody StudentDto studentDto) {
+        studentService.updateStudent(id, studentDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+    }
 }
