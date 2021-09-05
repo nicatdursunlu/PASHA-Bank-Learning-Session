@@ -13,11 +13,11 @@ import java.util.List;
 @Builder
 public class PageableGroupDto {
 
+    private List<GroupDto> groups;
+
     private int lastPageNumber;
 
     private boolean hasNextPage;
 
     private long totalElements;
-
-    private List<GroupDto> groups;
 }
