@@ -22,14 +22,4 @@ public class GroupController {
     public PageableGroupDto getGroups(@RequestParam("page") int page, @RequestParam("count") int count) {
         return groupService.getGroups(page, count);
     }
-
-    @GetMapping("/v2")
-    public List<GroupDto> getGroups2() {
-        return groupService.getGroups2();
-    }
-
-    @GetMapping("/{id}")
-    public GroupEntity getGroups3(@PathVariable Long id) {
-        return groupService.getGroups3(id);
-    }
 }

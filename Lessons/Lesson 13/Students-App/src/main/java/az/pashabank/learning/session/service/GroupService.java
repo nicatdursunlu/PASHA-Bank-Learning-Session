@@ -41,14 +41,4 @@ public class GroupService {
         return buildPageableResponse(groups, lastPageNumber, pages.hasNext(), pages.getTotalElements());
     }
 
-    public List<GroupDto> getGroups2() {
-        var groups = groupRepository.findAll();
-
-        return GroupMapper.mapEntitiesToDtos(groups);
-    }
-
-    public GroupEntity getGroups3(Long id) {
-        return groupRepository.findById(id).orElse(null);
-    }
-
 }
