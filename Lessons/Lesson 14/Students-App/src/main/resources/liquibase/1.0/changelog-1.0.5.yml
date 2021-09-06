@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create group_teacher table
+      author: Nijat Dursunlu
+      changes:
+        - createTable:
+            tableName: group_teacher
+            columns:
+              - column:
+                  name: group_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: teacher_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+
+            remarks: Join table for group and teacher relationship
