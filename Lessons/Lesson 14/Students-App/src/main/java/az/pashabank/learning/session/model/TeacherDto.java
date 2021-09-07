@@ -1,25 +1,28 @@
 package az.pashabank.learning.session.model;
 
+import az.pashabank.learning.session.dao.entity.GroupEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class GroupDto {
+public class TeacherDto {
 
     private Long id;
 
     private String name;
 
-    private String faculty;
+    private LocalDate birthDate;
 
-    private List<StudentDto> students;
+    private String subject;
 
-    private List<TeacherDto> teachers;
+//    private List<GroupEntity> groups;
+//    private List<GroupEntity> groups;
 }

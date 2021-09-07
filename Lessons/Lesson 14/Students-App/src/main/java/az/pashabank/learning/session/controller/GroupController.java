@@ -1,12 +1,8 @@
 package az.pashabank.learning.session.controller;
 
-import az.pashabank.learning.session.dao.entity.GroupEntity;
-import az.pashabank.learning.session.model.GroupDto;
 import az.pashabank.learning.session.model.PageableGroupDto;
 import az.pashabank.learning.session.service.GroupService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/groups")
