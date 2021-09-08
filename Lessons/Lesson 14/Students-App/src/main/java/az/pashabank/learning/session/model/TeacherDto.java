@@ -23,6 +23,5 @@ public class TeacherDto {
 
     private String subject;
 
-//    private List<GroupEntity> groups;
-//    private List<GroupEntity> groups;
+    private List<GroupDto> groups;
 }

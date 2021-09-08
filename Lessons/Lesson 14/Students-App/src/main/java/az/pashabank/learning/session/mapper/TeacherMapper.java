@@ -21,7 +21,7 @@ public class TeacherMapper {
                 .name(entity.getName())
                 .birthDate(entity.getBirthDate())
                 .subject(entity.getSubject())
-//                .groups(GroupMapper.mapEntitiesToDtos(entity.getGroups()))
+                .groups(GroupMapper.mapEntitiesToDtos(entity.getGroups()))
                 .build();
     }
 }

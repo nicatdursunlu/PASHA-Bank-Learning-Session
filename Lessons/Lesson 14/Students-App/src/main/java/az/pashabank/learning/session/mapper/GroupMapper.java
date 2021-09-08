@@ -38,6 +38,8 @@ public class GroupMapper {
                 .id(entity.getId())
                 .name(entity.getName())
                 .faculty(entity.getFaculty())
+//                .students(StudentMapper.mapEntitiesToDtos(entity.getStudents()))
+//                .teachers(TeacherMapper.mapEntitiesToDtos(entity.getTeachers()))
                 .build();
     }
 }
