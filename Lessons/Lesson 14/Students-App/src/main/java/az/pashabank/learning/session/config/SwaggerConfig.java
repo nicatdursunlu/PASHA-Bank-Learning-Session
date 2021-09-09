@@ -18,7 +18,6 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
-//                .apis(RequestHandlerSelectors.basePackage("az.pashabank.learning.session"))
                 .build();
     }
 }

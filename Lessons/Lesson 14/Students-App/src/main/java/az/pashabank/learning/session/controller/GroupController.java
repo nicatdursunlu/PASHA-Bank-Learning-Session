@@ -15,7 +15,7 @@ public class GroupController {
     }
 
     @GetMapping
-    public PageableGroupDto getGroups(@RequestParam("page") int page, @RequestParam("count") int count) {
+    public PageableGroupDto getGroups(int page, int count) {
         return groupService.getGroups(page, count);
     }
 }

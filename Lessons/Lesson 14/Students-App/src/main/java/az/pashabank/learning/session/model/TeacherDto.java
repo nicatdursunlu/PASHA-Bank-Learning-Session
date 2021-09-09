@@ -1,6 +1,5 @@
 package az.pashabank.learning.session.model;
 
-import az.pashabank.learning.session.dao.entity.GroupEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
