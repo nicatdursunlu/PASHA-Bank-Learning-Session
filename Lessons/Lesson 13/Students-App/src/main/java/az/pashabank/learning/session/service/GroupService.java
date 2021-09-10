@@ -1,16 +1,11 @@
 package az.pashabank.learning.session.service;
 
-import az.pashabank.learning.session.dao.entity.GroupEntity;
 import az.pashabank.learning.session.dao.repository.GroupRepository;
-import az.pashabank.learning.session.mapper.GroupMapper;
-import az.pashabank.learning.session.model.GroupDto;
 import az.pashabank.learning.session.model.PageableGroupDto;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 import static az.pashabank.learning.session.mapper.GroupMapper.buildPageableResponse;
 import static az.pashabank.learning.session.mapper.GroupMapper.buildEmptyResponse;
