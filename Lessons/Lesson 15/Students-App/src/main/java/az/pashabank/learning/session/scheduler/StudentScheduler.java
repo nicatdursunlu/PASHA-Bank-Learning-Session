@@ -1,23 +1,24 @@
 package az.pashabank.learning.session.scheduler;
 
-import az.pashabank.learning.session.service.StudentServiceImpl;
+import az.pashabank.learning.session.service.GroupService;
+import az.pashabank.learning.session.service.StudentService;
+import az.pashabank.learning.session.service.TeacherService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StudentScheduler {
 
-    private final StudentServiceImpl studentServiceImpl;
+    private final TeacherService teacherService;
 
-    public StudentScheduler(StudentServiceImpl studentServiceImpl) {
-        this.studentServiceImpl = studentServiceImpl;
+    public StudentScheduler(TeacherService teacherService) {
+        this.teacherService = teacherService;
     }
 
-    @Scheduled(fixedDelayString = "${scheduler.student.fixedDelay}")
-    public void printStudentName() {
-        studentServiceImpl.getStudents()
-                .forEach(
-                        student -> System.out.println(student.getName())
-                );
+    @Scheduled(fixedDelayString = "3000")
+    public void print() {
+        teacherService.getTeachers().forEach(
+                teacher -> System.out.println(teacher.getName())
+        );
     }
 }
