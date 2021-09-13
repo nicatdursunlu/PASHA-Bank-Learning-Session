@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add address_id field to student
+      author: Nijat Dursunlu
+      changes:
+        - addColumn:
+            tableName: student
+            columns:
+              - column:
+                  name: address_id
+                  type: bigint

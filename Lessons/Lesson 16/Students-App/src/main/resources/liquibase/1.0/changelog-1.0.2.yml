@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create student address table
+      author: Nijat Dursunlu
+      changes:
+        - createTable:
+            tableName: student_address
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: zip_code
+                  type: varchar(32)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: apartment
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+
+            remarks: Table to store  information about students
